@@ -1,0 +1,24 @@
+/* src/pages/Products.css */
+.product-row {
+    row-gap: 40px; /* Aumenta la separación vertical entre las filas de productos */
+  }
+  
+  .product-column {
+    padding: 20px; /* Aumenta el espacio entre las columnas de productos */
+  }
+  
+  .product-card {
+    padding: 15px; /* Espacio interno dentro de cada tarjeta */
+    margin-bottom: 30px; /* Aumenta la separación vertical entre las tarjetas */
+  }
+  
+  .product-image {
+    max-height: 250px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: contain; /* Asegura que la imagen se mantenga dentro del card sin perder proporción */
+  }
+  .toast-fixed {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050; /* Asegúrate de que esté por encima de otros elementos */
+  }

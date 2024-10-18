@@ -1,0 +1,5 @@
+/* src/styles.css */
+.carousel img {
+    max-height: 400px; /* Ajusta la altura máxima */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+}
