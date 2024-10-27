@@ -1,4 +1,3 @@
-// ProductCard.jsx
 import React, { useState } from 'react';
 import SizeQuantityPopup from './SizeQuantityPopup';
 

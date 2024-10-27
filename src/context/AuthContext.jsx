@@ -1,3 +1,4 @@
+// AuthContext.jsx
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -5,7 +6,7 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [loading, setLoading] = useState(true);  // Nuevo estado de carga
+  const [loading, setLoading] = useState(true);  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export const AuthProvider = ({ children }) => {
       console.log("Usuario cargado desde localStorage: ", storedUser);
       setCurrentUser(storedUser);
     }
-    setLoading(false);  // Indicamos que ha terminado de cargar el usuario
+    setLoading(false); 
   }, []);
 
   const login = (username, password) => {
@@ -34,16 +35,16 @@ export const AuthProvider = ({ children }) => {
     navigate('/login');
   };
 
-  const register = (username, password) => {
+  const register = (username, password, email, nombre, apellido, fechaNacimiento) => {
     const adminUsers = ['admin1', 'admin2'];
     const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userExists = users.find(user => user.username === username);
+    const userExists = users.find(user => user.username === username || user.email === email);
 
     if (userExists) {
-      return false;
+      return false; // El usuario o correo ya existe
     } else {
       const role = adminUsers.includes(username) ? 'admin' : 'cliente';
-      const newUser = { username, password, role };
+      const newUser = { username, password, email, nombre, apellido, fechaNacimiento, role };
       const updatedUsers = [...users, newUser];
       localStorage.setItem('users', JSON.stringify(updatedUsers));
       return true;

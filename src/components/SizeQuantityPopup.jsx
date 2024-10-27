@@ -1,4 +1,3 @@
-// SizeQuantityPopup.jsx
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,14 +8,14 @@ const SizeQuantityPopup = ({ product, onClose, onAddToCart }) => {
     const handleAddToCart = () => {
         if (size && quantity > 0) {
             const productWithDetails = {
-                ...product, // Esto debería incluir todas las propiedades de product
-                quantity: quantity, // Asegúrate de que quantity se está asignando correctamente
+                ...product, 
+                quantity: quantity, 
                 size: size,
-                subtotal: product.price * quantity, // Asegúrate de que el subtotal también se calcule aquí
+                subtotal: product.price * quantity, 
             };
     
-            console.log("Añadiendo al carrito:", productWithDetails); // Revisa aquí
-            onAddToCart(productWithDetails); // Llama a addToCart con el objeto correcto
+            console.log("Añadiendo al carrito:", productWithDetails);
+            onAddToCart(productWithDetails); 
             onClose();
         } else {
             alert("Por favor, selecciona un talle y cantidad.");

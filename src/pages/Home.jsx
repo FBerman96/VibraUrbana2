@@ -14,7 +14,6 @@ const Home = () => {
 
     return (
         <div className="container" style={{ paddingTop: '20px', paddingBottom: '50px' }}>
-            {/* Carrusel de imágenes */}
             <Carousel style={{ marginBottom: '50px' }}>
                 <Carousel.Item>
                     <img

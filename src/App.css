@@ -48,11 +48,11 @@ div#root{
 }
 
 .carousel img {
-  max-height: 400px; /* Ajusta la altura máxima */
-  object-fit: cover; /* Mantiene la relación de aspecto */
+  max-height: 400px;
+  object-fit: cover; 
 }
 
-/* src/App.css (o el archivo CSS correspondiente) */
+
 
 body {
   margin: 0;
@@ -66,71 +66,77 @@ html{
 }
 
 .carousel {
-  margin-bottom: 50px; /* Ajusta el valor según tu preferencia */
+  margin-bottom: 50px; 
 }
 
 h2 {
-  text-align: center; /* Centra el título de productos destacados */
-  margin-top: 30px; /* Aumenta espacio arriba */
-    margin-bottom: 20px; /* Aumenta espacio debajo */
-  color: #333; /* Cambia el color del texto si es necesario */
+  text-align: center; 
+  margin-top: 30px; 
+    margin-bottom: 20px; 
+  color: #333; 
 }
 
 
 .container {
-  padding: 20px 50px; /* Aumenta el espacio dentro de los bordes */
+  padding: 20px 50px; 
 }
 
 .featured-products .col-md-4 {
-  padding: 20px; /* Añade espacio entre los productos */
-  margin-bottom: 30px; /* Añade espacio debajo de cada producto */
+  padding: 20px; 
+  margin-bottom: 30px; 
 }
 header {
-  margin-bottom: 100px; /* Ajusta el valor según lo que necesites */
+  margin-bottom: 100px; 
 }
 
 .container-fullwidth {
-  width: 100%;  /* Asegura que el div ocupe todo el ancho */
-  background-color: white; /* Fondo blanco específico para el contenido */
-  padding: 20px; /* Puedes ajustar el padding para dar más espacio */
+  width: 100%;  
+  background-color: white; 
+  padding: 20px; 
 }
 
-.navbar-fullwidth {
-  width: 100%;
-  background-color: white; /* El color de fondo que quieras */
-  padding: 10px 0; /* Ajusta el padding según lo que necesites */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra si lo deseas */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo translúcido */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-.navbar-nav .nav-link {
+
+footer {
+  background-color: #f0f0f0; /* Fondo neutro claro */
+}
+
+
+.navbar-nav .nav-link, footer a {
   color: #000000;
   transition: transform 0.2s ease, color 0.2s ease;
-  width: 100%;
-  font-family: 'Poppins', sans-serif; /* Aplica la fuente elegida */
-  font-weight: 600; /* Negrita */
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 600; 
 }
 
-.navbar-nav .nav-link:hover {
-  transform: scale(1.1); /* El enlace se agranda ligeramente */
-  color: #ffafbd; /* Cambio de color a un tono del degradado */
-  width: 100%;
-  font-family: 'Poppins', sans-serif; /* Aplica la fuente elegida */
-  font-weight: 600; /* Negrita */
+.navbar-nav .nav-link:hover, footer a:hover {
+  transform: scale(1.1); 
+  color: #ffafbd !important;
 
 }
-.navbar-container {
-  background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%); /* El mismo degradado que ya estás usando */
-  padding: 10px 0; /* Añade algo de padding para que no se vea tan pegado */
+
+footer a.nav-link {
+  display: inline-block;
+  padding: 0;
+  margin: 0;  /* Aseguramos que no haya márgenes no deseados alrededor del texto */
 }
 
+footer a.nav-link.me-2 {
+  margin-left: 1em;  /* Añade un espacio (1rem) entre Facebook e Instagram */
+}
 
-footer{
-  font-weight: 600; /* Negrita */
-
+footer a.nav-link:hover {
+  color: #ffafbd !important;
+  transform: scale(1.1) !important;
+  text-decoration: underline !important;
 }
 
 .carousel-caption h3, 
 .carousel-caption p {
-    color: black; /* Cambia este valor al color que prefieras */
+    color: black; 
     padding: 10px;
     border-radius: 8px;
 }
@@ -138,5 +144,54 @@ footer{
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 1050; /* Asegúrate de que esté por encima de otros elementos */
+  z-index: 1050; 
+}
+
+/* Estilos globales compartidos por ambos footers */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+footer h5 {
+  color: #333;
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease; /* Efecto de transición */
+}
+
+/* Aumenta la especificidad del selector y agrega !important para el hover */
+footer a:hover {
+  color: #ffafbd !important;       /* Asegúrate que el hover funcione */
+  transform: scale(1.1) !important; /* Forzar el cambio de tamaño */
+  text-decoration: underline !important;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.container py-4 {
+  padding: 20px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.col-md-4 {
+  margin-bottom: 20px;
 }

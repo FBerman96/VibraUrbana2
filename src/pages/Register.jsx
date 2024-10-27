@@ -1,21 +1,25 @@
-// src/pages/Register.jsx
+// Register.jsx
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-  const { register } = useContext(AuthContext);  // Obtén la función register del contexto
+  const { register } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();  // Para redireccionar después del registro
+  const [email, setEmail] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [fechaNacimiento, setFechaNacimiento] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = register(username, password);  // Llama a la función register
+    const success = register(username, password, email, nombre, apellido, fechaNacimiento);
     if (success) {
-      navigate('/login');  // Redirige al login si el registro es exitoso
+      navigate('/login');
     } else {
-      alert('El nombre de usuario ya existe.');
+      alert('El nombre de usuario o el correo ya existe.');
     }
   };
 
@@ -23,6 +27,50 @@ const Register = () => {
     <div className="container mt-5">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="nombre" className="form-label">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            className="form-control"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="apellido" className="form-label">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            className="form-control"
+            value={apellido}
+            onChange={(e) => setApellido(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="fechaNacimiento" className="form-label">Fecha de Nacimiento</label>
+          <input
+            type="date"
+            id="fechaNacimiento"
+            className="form-control"
+            value={fechaNacimiento}
+            onChange={(e) => setFechaNacimiento(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="email" className="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            id="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">Username</label>
           <input

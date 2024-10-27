@@ -1,4 +1,3 @@
-// src/components/ToastNotification.jsx
 import React from 'react';
 import { Toast, ToastContainer } from 'react-bootstrap';
 

@@ -1,0 +1,15 @@
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .Toastify__toast-container {
+    z-index: 9999; 
+  }
+  

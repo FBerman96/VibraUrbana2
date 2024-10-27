@@ -1,8 +1,6 @@
-// src/utils/receiptGenerator.js
 export const generateReceipt = (cartItems, totalAmount, userName) => {
   let receiptContent = '----- Purchase Receipt -----\n\n';
   
-  // Si el usuario está logueado, muestra su nombre
   if (userName) {
     receiptContent += `Customer: ${userName}\n\n`;
   }
@@ -17,7 +15,6 @@ export const generateReceipt = (cartItems, totalAmount, userName) => {
   receiptContent += `Total Amount: $${totalAmount}\n`;
   receiptContent += '\nThank you for your purchase!';
   
-  // Crear y descargar el archivo txt
   const blob = new Blob([receiptContent], { type: 'text/plain' });
   const link = document.createElement('a');
   link.href = window.URL.createObjectURL(blob);

@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (login(username, password)) {
-      navigate('/'); // Redirigir al home después del login
+      navigate('/');
     } else {
       setError('Invalid username or password');
     }

@@ -15,7 +15,7 @@
   import product11 from '../assets/product11.jpg';
   import product12 from '../assets/product12.jpg';
   import '../App.css';
-  import './Products.css'; // Archivo CSS personalizado
+  import './Products.css'; 
 
     
 
@@ -38,15 +38,14 @@
       { id: 10, name: 'BERMUDA DENIM BÁSICA', price: 79990, image: product10 },
       { id: 11, name: 'CONJUNTO SUDADERA Y LEGGING MINNIE MOUSE © DISNEY', price: 63990, image: product11 },
       { id: 12, name: 'VESTIDO TEXTO TABLAS TÉCNICO', price: 63990, image: product12 },
-      // Más productos...
     ];
 
     const handleAddToCart = (product) => {
       addToCart({ ...product});
       setShowToast(true);
     };
-  // Componente del Toast que se renderiza en el portal
-  const renderToast = () => (
+
+    const renderToast = () => (
     <ToastContainer position="top-end" className="toast-fixed">
       <Toast bg="success" onClose={() => setShowToast(false)} show={showToast} delay={3000} autohide>
         <Toast.Header>
@@ -59,16 +58,16 @@
     return (
       <div className="container mt-5">
         <h1>Nuestros Productos</h1>
-        <div className="row product-row"> {/* Agregamos la clase CSS personalizada */}
+        <div className="row product-row"> 
           {products.map((product) => (
-            <div key={product.id} className="col-md-4 mb-4 product-column"> {/* Más separación entre productos */}
+            <div key={product.id} className="col-md-4 mb-4 product-column"> 
               <ProductCard product={product} addToCart={handleAddToCart} />
             </div>
           ))}
         </div>
 
-        {/* Renderizamos el ToastContainer dentro de un portal */}
-        {renderToast()} {/* Probar sin portal */}
+        
+        {renderToast()} 
         </div>
       
     );
